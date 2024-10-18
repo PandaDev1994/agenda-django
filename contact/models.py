@@ -10,6 +10,9 @@ class Contact(models.Model):
     phone = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
     create_date = models.DateTimeField(default=timezone.now)
-    description = models.TextField(max_length=500)
+    description = models.TextField(max_length=500 , blank=True)
+
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}'
     
     
